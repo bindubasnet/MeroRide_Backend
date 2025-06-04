@@ -1,0 +1,32 @@
+{
+   "name": "meroride",
+   "version": "1.0.0",
+   "main": "index.js",
+   "devDependencies": {
+      "sequelize-cli": "^6.6.3"
+   },
+   "scripts": {
+      "dev": "nodemon index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "description": "",
+   "dependencies": {
+      "bcrypt": "^6.0.0",
+      "bcryptjs": "^3.0.2",
+      "body-parser": "^2.2.0",
+      "cli": "^1.0.1",
+      "dotenv": "^16.5.0",
+      "express": "^5.1.0",
+      "fs": "^0.0.1-security",
+      "js": "^0.1.0",
+      "jsonwebtoken": "^9.0.2",
+      "multer": "^2.0.0",
+      "mysql2": "^3.14.1",
+      "nodemailer": "^7.0.3",
+      "nodemon": "^3.1.10",
+      "sequelize": "^6.37.7"
+   }
+}
