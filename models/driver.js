@@ -26,6 +26,10 @@ const Driver = db.define("drivers", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  phonenumber:{
+    type: DataTypes.INTEGER,
+    allowNull:false
+  },
   vehicleType: {
     type: DataTypes.STRING,
     allowNull: false,

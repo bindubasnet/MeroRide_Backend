@@ -78,7 +78,6 @@ const verifyOTP = async (req, res) => {
     if(!email || !otp || !role){
       return res.status(400).json({message:"Invalid request!"});
     }
-    console.log(email, otp, role);
     
     const record = await OTP.findOne({ where: { email, otp } });
     console.log(record);

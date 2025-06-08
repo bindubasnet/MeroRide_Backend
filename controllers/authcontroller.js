@@ -37,7 +37,9 @@ const login = async (req, res) => {
 
 const register = async (req, res) => {
   try {
-    const { username, email, password, confirmPassword, address} = req.body;
+    console.log(req.body);
+    
+    const { username, email, password, confirmPassword, phonenumber, address} = req.body;
     if (password !== confirmPassword) return res.status(400).json({ message: "Passwords do not match" });
 
     const existingUserEmail = await User.findOne({ where: { email } });
@@ -49,7 +51,7 @@ const register = async (req, res) => {
     const hashPassword = bcrypt.hashSync(password, 10);
     await User.create({
       username, email, password: hashPassword,
-      isEmailVerified: false, address
+      isEmailVerified: false, phonenumber, address
     });
 
     await sendOTP(email);

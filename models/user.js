@@ -28,6 +28,12 @@ const User = db.define("users", {
         allowNull: false,
         defaultValue: false
     },
+
+    phonenumber:{
+        type: DataTypes.INTEGER,
+        allowNull:false
+    },
+
     address:{
         type: DataTypes.STRING,
         allowNull: false

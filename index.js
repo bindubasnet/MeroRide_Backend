@@ -1,16 +1,20 @@
 const express = require("express");
-const dotenv = require("dotenv").config();
 const bodyParser = require("body-parser");
 const sequelize = require("./db");
-const User = require("./models/user");
-const Driver = require("./models/driver");
-const driverdocuments =require("./models/driverdocuments");
 const authRoutes = require("./routes/authRoutes");
 const driverRoutes = require('./routes/driverRoutes');
 const roleRoutes = require('./routes/roleRoutes');
 const app = express();
+const cors = require('cors')
+
+
 const driverdocumentRoutes = require('./routes/driverdocumentRoutes');
 const port = process.env.PORT || 3301;
+
+app.use(cors({
+  origin: 'http://localhost:3000', 
+  credentials: true,               
+}));
 
 app.use(bodyParser.json());
 app.use(express.json());
@@ -26,9 +30,10 @@ app.use("/api/auth", authRoutes);
 app.use('/api/driver', driverRoutes);
 app.use('/api/roles', roleRoutes);
 
+
 sequelize.authenticate().then(() => {
     console.log("DB connected successfully.");
-    sequelize.sync({ });
+    sequelize.sync({force:"true" });
   })
   .then(() => {
     app.listen(port, () => {
@@ -38,3 +43,4 @@ sequelize.authenticate().then(() => {
   .catch((err) => {
     console.error("Unable to connect to DB:", err);
   });
+
