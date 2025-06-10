@@ -7,6 +7,14 @@ const DriverDocument = db.define('DriverDocument', {
         autoIncrement: true,
         primaryKey: true,
     },
+    vehicleType: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    vehicleNumber: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     billbook:{
         type:DataTypes.STRING,
         allowNull: false,

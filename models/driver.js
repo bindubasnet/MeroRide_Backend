@@ -30,14 +30,6 @@ const Driver = db.define("drivers", {
     type: DataTypes.INTEGER,
     allowNull:false
   },
-  vehicleType: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  vehicleNumber: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   isEmailVerified: {
     type: DataTypes.BOOLEAN,
     defaultValue: false,

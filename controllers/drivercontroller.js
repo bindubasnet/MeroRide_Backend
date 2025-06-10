@@ -5,7 +5,7 @@ const { sendOTP, generateOTPForEmail, verifyOTP } = require('./OtpController');
 
 const register = async (req, res) => {
   try {
-    const { username, email, password, confirmPassword, phonenumber, address, vehicleType, vehicleNumber} = req.body;
+    const { username, email, password, confirmPassword, phonenumber, address} = req.body;
     
     const files = req.files;
 
@@ -25,8 +25,7 @@ const register = async (req, res) => {
       password: hashedPassword,
       phonenumber,
       address,
-      vehicleType,
-      vehicleNumber,
+
     });
 
     await sendOTP(email);
