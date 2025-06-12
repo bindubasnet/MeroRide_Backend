@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const Driver = require('../models/driver');
+const Driver = require('../models/Driver');
 const { sendOTP, generateOTPForEmail, verifyOTP } = require('./OtpController');
 
 const register = async (req, res) => {

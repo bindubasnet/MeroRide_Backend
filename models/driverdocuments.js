@@ -1,5 +1,5 @@
 const {DataTypes} = require("sequelize");
-const db = require("../db");
+const db = require("../config/db");
 
 const DriverDocument = db.define('DriverDocument', {
     id:{

@@ -1,4 +1,4 @@
-const DriverDocument = require('../models/driverdocuments');
+const DriverDocument = require('../models/driverDocuments');
 const Driver =require('../models/driver');
 const fs =  require('fs');
 const { where } = require('sequelize');

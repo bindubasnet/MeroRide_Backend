@@ -1,7 +1,7 @@
 const Driver = require("../models/driver");
-const User = require("../models/user");
+const User = require("../models/User");
 const nodemailer = require('nodemailer');
-const OTP = require('../models/otp');
+const OTP = require('../models/OTP');
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',

@@ -1,5 +1,7 @@
 const { DataTypes } = require("sequelize");
-const db = require("../db");
+const db = require("../config/db");
+
+const Ride = require('./Ride');
 
 const Driver = db.define("drivers", {
   id: {
@@ -40,5 +42,9 @@ const Driver = db.define("drivers", {
     timestamps: false
 
   });
+
+// Driver.hasMany(Ride, {
+//   foreignKey: 'driverId'
+// });
 
 module.exports = Driver;
